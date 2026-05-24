@@ -1,14 +1,24 @@
+# vpc id 
+variable "vpc_id" {
+  type = string
+}
+
+# ami
 variable "ami" {
   type = string
   default = "ami-0a59248a6294cece2"
-  description = "dev ec2 ami value"
 }
-
+# instance type
 variable "instance_type" {
   type = string
-  default = "t2.micro"
+  default = "t3.micro"
 }
 
-variable "vpc_id" {
+# instance key
+variable "key" {
+  type = string
+  default = "dev-ec2"
+}
+variable "subnet_id" {
   type = string
 }

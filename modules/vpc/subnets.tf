@@ -2,6 +2,7 @@
 resource "aws_subnet" "dev_public_subnet" {
   vpc_id = aws_vpc.dev_vpc.id
   cidr_block = var.dev_public_subnet_cidr
+  map_public_ip_on_launch = true
 
   tags = {
     Name = "${var.Environment} public subnet"
@@ -44,7 +45,6 @@ resource "aws_subnet" "dev_private_subnet" {
 # private subnet route table
 resource "aws_route_table" "private_subnet_route_table" {
   vpc_id = aws_vpc.dev_vpc.id
-
   route {
     cidr_block = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.dev_nat_gateway.id
