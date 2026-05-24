@@ -21,3 +21,12 @@ output "natgateway_ip" {
   value = module.vpc.natgateway_ip
   
 }
+
+output "vpc_id" {
+  value = module.vpc.vpc_id
+}
+
+module "ec2" {
+  source = "./modules/ec2"
+  vpc_id = module.vpc.vpc_id
+}
