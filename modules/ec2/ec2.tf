@@ -1,6 +1,6 @@
 resource "aws_instance" "dev_ec2_instance" {
   ami = var.ami
-  instance_type = var.instance_type
+  instance_type = var.instance_type[0]
   key_name = var.key
   vpc_security_group_ids = [ aws_security_group.dev_ec2_sg.id ]
   subnet_id = var.subnet_id

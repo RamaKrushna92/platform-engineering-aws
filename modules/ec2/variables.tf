@@ -10,8 +10,8 @@ variable "ami" {
 }
 # instance type
 variable "instance_type" {
-  type = string
-  default = "t3.micro"
+  type = list(string)
+  default = ["t3.micro", "t2.micro"]
 }
 
 # instance key
