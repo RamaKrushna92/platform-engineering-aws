@@ -20,7 +20,7 @@ variable "key" {
   default = "dev-ec2"
 }
 variable "subnet_id" {
-  type = string
+  type = list(string)
 }
 
 variable "associate_public_ip_address" {
@@ -30,7 +30,7 @@ variable "associate_public_ip_address" {
 
 variable "cpu_options" {
   type = number
-  default = 1
+  default = 2
 }
 
 variable "threads_per_core" {
