@@ -27,15 +27,19 @@ output "natgateway_ip" {
 }
 
 # subnet id
-output "subnet_id" {
-  value = module.vpc.subnet_id
+output "public_subnet_id" {
+  value = module.vpc.public_subnet_id
+}
+
+output "private_subnet_id" {
+  value = module.vpc.private_subnet_id
 }
 
 # ec2 module
 module "ec2" {
   source = "../../ec2"
   vpc_id = module.vpc.vpc_id
-  subnet_id = module.vpc.subnet_id
+  subnet_id = [module.vpc.public_subnet_id, module.vpc.private_subnet_id]
 }
 
 output "ec2instance_id" {
@@ -45,4 +49,3 @@ output "ec2instance_id" {
 output "ec2instance_publicip" {
   value = module.ec2.ec2instance_publicip
 }
-

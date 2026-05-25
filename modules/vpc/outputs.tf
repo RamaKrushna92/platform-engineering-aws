@@ -8,7 +8,12 @@ output "vpc_id" {
   description = "dev_vpc id for ec2 instance reference"
 }
 
-output "subnet_id" {
+output "public_subnet_id" {
   value = aws_subnet.dev_public_subnet.id
   description = "attach with dev-ec2instance"
+}
+
+output "private_subnet_id" {
+  value = aws_subnet.dev_private_subnet.id
+  description = "attach with dev-ec2instance-private"
 }

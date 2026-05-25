@@ -1,8 +1,8 @@
-# vpc id 
-variable "vpc_id" {
-  type = string
+# count
+variable "instance_count" {
+  type = number
+  default = 2
 }
-
 # ami
 variable "ami" {
   type = string
@@ -10,17 +10,20 @@ variable "ami" {
 }
 # instance type
 variable "instance_type" {
-  type = string
-  default = "t3.micro"
+  type = list(string)
+  default = ["t3.micro", "t2.micro"]
 }
-
+# vpc id 
+variable "vpc_id" {
+  type = string
+}
 # instance key
 variable "key" {
   type = string
   default = "dev-ec2"
 }
 variable "subnet_id" {
-  type = string
+  type = list(string)
 }
 
 variable "associate_public_ip_address" {
