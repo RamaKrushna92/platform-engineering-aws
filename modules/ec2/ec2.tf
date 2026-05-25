@@ -8,6 +8,7 @@ resource "aws_instance" "dev_ec2_instance" {
 
   cpu_options {
     core_count = var.cpu_options
+    threads_per_core = var.threads_per_core
   }
   
   tags = {

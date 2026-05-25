@@ -30,5 +30,10 @@ variable "associate_public_ip_address" {
 
 variable "cpu_options" {
   type = number
+  default = 1
+}
+
+variable "threads_per_core" {
+  type = number
   default = 2
 }
