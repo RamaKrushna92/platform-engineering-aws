@@ -22,3 +22,13 @@ variable "key" {
 variable "subnet_id" {
   type = string
 }
+
+variable "associate_public_ip_address" {
+  type = bool
+  default = true
+}
+
+variable "cpu_options" {
+  type = number
+  default = 2
+}
