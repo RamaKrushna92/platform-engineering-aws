@@ -9,8 +9,8 @@ To connect with aws eks cluster from local, we have to install the aws cli and t
 
 <pre>
 --> Connect with kubernetes cluster from local use the below command
-    <br>* aws eks --region <region name> update-kubeconfig --name <cluster name></br>
-    <br>* aws eks --region ap-southeast-2 update-kubeconfig --name dev-eks</br>
+    <br>&nbsp;* aws eks --region <region name> update-kubeconfig --name <cluster name></br>
+    <br>&nbsp;* aws eks --region ap-southeast-2 update-kubeconfig --name dev-eks</br>
 </pre>
     
 --> verify the cluster details
