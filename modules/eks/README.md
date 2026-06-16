@@ -18,3 +18,7 @@ To connect with aws eks cluster from local, we have to install the aws cli and t
 --> switch b/w clusters
     <br>* kubectl config use-context <cluster name></br>
 
+--> <br>* kubectl config current-context </br>
+--> <br>* kubectl get nodes </br>
+
+
