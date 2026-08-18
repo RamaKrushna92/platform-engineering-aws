@@ -14,7 +14,8 @@ provider "aws" {
 }
 # vpc module executing
 module "vpc" {
-  source = "../../vpc"
+  # source = "../../vpc"
+  source = "../../modules/vpc"
 }
 output "vpc_id" {
   value = module.vpc.vpc_id
@@ -37,7 +38,7 @@ output "private_subnet_id" {
 
 # ec2 module
 module "ec2" {
-  source = "../../ec2"
+  source = "../../modules/ec2"
   vpc_id = module.vpc.vpc_id
   subnet_id = [module.vpc.public_subnet_id, module.vpc.private_subnet_id]
 }
