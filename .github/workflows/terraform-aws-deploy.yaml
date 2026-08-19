@@ -1,2 +1,15 @@
-# This file is for githubActions pipeline, which will execute the terraform scripts to provision the resources in the aws cloud
+# This file is for githubActions pipeline, which will execute the terraform scripts to provision the resources in the aws cloud.
+name: Terraform workflow
+on: 
+  push:
+jobs:
+  Print-Runner-Info:
+      runs-on: ubunu-latest
+      steps:
+      - name: print the OS name
+        run: echo cat /etc/os-release
+      - name: print disk space
+        run: echo df -h
+
+    
 
