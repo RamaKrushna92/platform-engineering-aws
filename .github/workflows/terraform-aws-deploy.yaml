@@ -3,13 +3,13 @@ name: Terraform workflow
 on: 
   push:
 jobs:
-  Print-Runner-Info:
+  Print-Runner-Info-job:
       runs-on: ubuntu-latest
       steps:
       - name: print the OS name
-        run: echo cat /etc/os-release
+        run: echo "cat /etc/os-release"
       - name: print disk space
-        run: echo df -h
+        run: echo "df -h"
 
     
 
