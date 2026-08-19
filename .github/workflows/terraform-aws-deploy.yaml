@@ -1,15 +1,16 @@
 # This file is for githubActions pipeline, which will execute the terraform scripts to provision the resources in the aws cloud.
 name: Terraform workflow
-on: 
-  push:
+on: [push]
+
 jobs:
-  Print-Runner-Info-job:
+  workflow-Runner-Info-job:
       runs-on: ubuntu-latest
+
       steps:
       - name: print the OS name
-        run: echo "cat /etc/os-release"
+        run: cat /etc/os-release
       - name: print disk space
-        run: echo "df -h"
+        run: echo df -h
 
     
 
