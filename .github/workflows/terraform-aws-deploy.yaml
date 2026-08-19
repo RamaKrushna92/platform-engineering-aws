@@ -1,0 +1,2 @@
+# This file is for githubActions pipeline, which will execute the terraform scripts to provision the resources in the aws cloud
+
