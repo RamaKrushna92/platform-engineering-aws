@@ -10,7 +10,7 @@ jobs:
       - name: print the OS name
         run: cat /etc/os-release
       - name: print disk space
-        run: echo df -h
+        run: df -h
 
     
 
