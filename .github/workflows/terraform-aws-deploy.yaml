@@ -4,7 +4,7 @@ on:
   push:
 jobs:
   Print-Runner-Info:
-      runs-on: ubunu-latest
+      runs-on: ubuntu-latest
       steps:
       - name: print the OS name
         run: echo cat /etc/os-release
