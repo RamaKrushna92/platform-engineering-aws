@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     aws = {
-      source = "hashicorp/aws"
+      source  = "hashicorp/aws"
       version = "~> 6.0"
     }
   }
@@ -17,7 +17,7 @@ module "vpc" {
   source = "./modules/vpc"
 }
 output "vpc_id" {
-  value = module.vpc.vpc_id
+  value       = module.vpc.vpc_id
   description = "dev_vpc id for ec2 instance reference"
 }
 
@@ -33,8 +33,8 @@ output "subnet_id" {
 
 # ec2 module
 module "ec2" {
-  source = "./modules/ec2"
-  vpc_id = module.vpc.vpc_id
+  source    = "./modules/ec2"
+  vpc_id    = module.vpc.vpc_id
   subnet_id = module.vpc.subnet_id
 }
 

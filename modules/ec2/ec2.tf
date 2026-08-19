@@ -4,8 +4,7 @@ resource "aws_instance" "dev_ec2_instance" {
   count = var.instance_count
   key_name = var.key
   vpc_security_group_ids = [ aws_security_group.dev_ec2_sg.id ]
-  subnet_id = var.subnet_id[count.index]
-  associate_public_ip_address = count.index == 0 ? true : false
+  subnet_id = var.subnet_id[0]
 
   cpu_options {
     core_count = var.cpu_options
@@ -17,6 +16,8 @@ resource "aws_instance" "dev_ec2_instance" {
   ]
   
   tags = {
-    Name = "app-server-${count.index == 0 ? "public" : "private"}"
+    "Name" = "devEc2Instance"
+    "Environment" = "Dev"
+    "Project" = "EKS-platform-Engineering"
   }
 }

@@ -14,8 +14,8 @@ resource "aws_vpc_security_group_ingress_rule" "allow_inbound_ports" {
   to_port = each.value
 }
 
-# resource "aws_vpc_security_group_egress_rule" "allow_all_outbound_ipv4" {
-#   security_group_id = aws_security_group.dev_ec2_sg.id
-#   cidr_ipv4 = "0.0.0.0/0"
-#   ip_protocol = "-1"
-# }
+resource "aws_vpc_security_group_egress_rule" "allow_all_outbound_ipv4" {
+  security_group_id = aws_security_group.dev_ec2_sg.id
+  cidr_ipv4 = "0.0.0.0/0"
+  ip_protocol = "-1"
+}

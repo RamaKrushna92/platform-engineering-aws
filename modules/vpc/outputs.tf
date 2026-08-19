@@ -17,3 +17,8 @@ output "private_subnet_id" {
   value = aws_subnet.dev_private_subnet.id
   description = "attach with dev-ec2instance-private"
 }
+
+output "enable_dns_hostnames" {
+  value = aws_vpc.dev_vpc.enable_dns_hostnames
+  description = "the public dns name"
+}

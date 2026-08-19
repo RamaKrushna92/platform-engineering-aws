@@ -40,7 +40,7 @@ output "private_subnet_id" {
 module "ec2" {
   source = "../../modules/ec2"
   vpc_id = module.vpc.vpc_id
-  subnet_id = [module.vpc.public_subnet_id, module.vpc.private_subnet_id]
+  subnet_id = [module.vpc.public_subnet_id]
 }
 
 output "ec2instance_id" {
@@ -49,4 +49,9 @@ output "ec2instance_id" {
 
 output "ec2instance_publicip" {
   value = module.ec2.ec2instance_publicip
+}
+
+output "enable_dns_hostnames" {
+  value = module.vpc.enable_dns_hostnames
+  description = "public dns hostname"
 }
